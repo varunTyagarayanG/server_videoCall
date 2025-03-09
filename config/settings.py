@@ -107,14 +107,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ASGI_APPLICATION = 'config.asgi.application'
 
+import os
+
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [
+                (
+                    os.getenv("REDISHOST", "mainline.proxy.rlwy.net"),  # Use Railway Redis host
+                    int(os.getenv("REDISPORT", "14924")),  # Use Railway Redis port
+                )
+            ],
+            "password": os.getenv("REDISPASSWORD", "CDZkGYerGDlayXWWSzcrorFFywrBTnez"),  # Redis password from Railway
+            "ssl": True,  # Ensures encrypted Redis connection
         },
     },
 }
+
 
 CORS_ALLOWED_ORIGINS = [
     'https://localhost:3000',
