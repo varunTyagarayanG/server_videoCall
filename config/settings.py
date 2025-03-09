@@ -113,7 +113,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": ["rediss://:CDZkGYerGDlayXWWSzcrorFFywrBTnez@mainline.proxy.rlwy.net:14924"],
+            "hosts": ["redis://default:CDZkGYerGDlayXWWSzcrorFFywrBTnez@mainline.proxy.rlwy.net:14924"],
         },
     },
 }
