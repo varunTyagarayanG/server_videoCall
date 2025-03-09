@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'channels',
+    'daphne',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
