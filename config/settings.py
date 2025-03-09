@@ -113,14 +113,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [
-                (
-                    os.getenv("REDISHOST", "mainline.proxy.rlwy.net"),  # Use Railway Redis host
-                    int(os.getenv("REDISPORT", "14924")),  # Use Railway Redis port
-                )
-            ],
-            "password": os.getenv("REDISPASSWORD", "CDZkGYerGDlayXWWSzcrorFFywrBTnez"),  # Redis password from Railway
-            "ssl": True,  # Ensures encrypted Redis connection
+            "hosts": ["rediss://:CDZkGYerGDlayXWWSzcrorFFywrBTnez@mainline.proxy.rlwy.net:14924"],
         },
     },
 }
