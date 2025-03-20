@@ -119,13 +119,7 @@ CHANNEL_LAYERS = {
     },
 }
 
-
-CORS_ALLOWED_ORIGINS = [
-    'https://localhost:3000',
-    'https://127.0.0.1:3000',
-    'https://192.168.31.39:3000',
-    'https://baldies-eosin.vercel.app' 
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 INTERNAL_IPS = [
     "127.0.0.1",
